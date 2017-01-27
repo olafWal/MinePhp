@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\AbstractServer;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -16,13 +17,10 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $ping = new MinecraftPing('localhost', 25566, 1);
+        $servers = $this->getDoctrine()->getRepository(AbstractServer::class)->findAll();
+        if (!$servers) {
 
-        $ping->Connect();
+        }
 
-        $result = $ping->Query();
-
-
-        return ['ping' => $result];
     }
 }
