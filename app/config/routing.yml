@@ -1,0 +1,9 @@
+default:
+    resource: "@AppBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix: /
+
+admin:
+    resource: "@AppBundle/Controller/AdminController.php"
+    type:     annotation
+    prefix: /admin
