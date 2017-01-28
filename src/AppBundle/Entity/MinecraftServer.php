@@ -39,4 +39,9 @@ class MinecraftServer extends AbstractServer
         $this->queryPort = $queryPort;
         return $this;
     }
+
+    public function getTypeName()
+    {
+        return 'minecraft';
+    }
 }

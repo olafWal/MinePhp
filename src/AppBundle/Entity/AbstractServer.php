@@ -47,11 +47,25 @@ abstract class AbstractServer
     private $address;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="port", type="string", length=255)
+     * @ORM\Column(name="port", type="integer", length=255)
      */
     private $port;
+
+    /**
+     * get a list of subclasses
+     * @return array
+     */
+    public static function getDiscriminatorMap()
+    {
+        return [
+            'minecraft' => MinecraftServer::class,
+            'bungee' => BungeeServer::class
+        ];
+    }
+
+    abstract public function getTypeName();
 
 
     /**
@@ -139,7 +153,7 @@ abstract class AbstractServer
     /**
      * Get port
      *
-     * @return string
+     * @return integer
      */
     public function getPort()
     {
@@ -149,7 +163,7 @@ abstract class AbstractServer
     /**
      * Set port
      *
-     * @param string $port
+     * @param integer $port
      *
      * @return AbstractServer
      */

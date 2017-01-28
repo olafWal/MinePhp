@@ -1,10 +1,37 @@
 {% extends '::base.html.twig' %}
 
 {% block content %}
-    ?????
-{% endblock %}
 
-{% block title %}
 
-{% endblock %}
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <td>{% trans %}table.servers.head.name{% endtrans %}</td>
+                    <td>{% trans %}table.servers.head.actions{% endtrans %}</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for server in servers %}
+                    <tr>
+                        <td>{{ server.name }}</td>
+                        <td><a href="{{ path('app_admin_serveredit', {'id': server.id}) }}"
+                               class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></a>
+                            <a class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td></td>
+                    <td><a href="{{ path('app_admin_serveredit') }}" class="btn btn-primary btn-sm"><span
+                                    class="glyphicon glyphicon-plus"></span></a></td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+{% endblock content %}
+
 

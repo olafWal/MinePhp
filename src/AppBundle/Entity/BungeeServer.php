@@ -17,5 +17,31 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class BungeeServer extends AbstractServer
 {
+    /** @var  integer
+     * @ORM\Column(type="integer")
+     */
+    protected $queryPort;
 
+    /**
+     * @return int
+     */
+    public function getQueryPort()
+    {
+        return $this->queryPort;
+    }
+
+    /**
+     * @param int $queryPort
+     * @return BungeeServer
+     */
+    public function setQueryPort($queryPort)
+    {
+        $this->queryPort = $queryPort;
+        return $this;
+    }
+
+    public function getTypeName()
+    {
+        return 'bungee';
+    }
 }

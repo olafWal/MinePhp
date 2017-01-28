@@ -2,3 +2,28 @@ app:
   title: MinePHP
   admin:
     title: MinePHP Admin
+
+flash:
+  servers:
+    not_configured: Bitte zuerst mindestens einen Server konfigurieren
+
+server:
+  formtab:
+    minecraft: Minecraft Server
+    bungee: Bungee Server
+
+Name: Name
+Description: Beschreibung
+Address: Server Adresse (IP oder Name)
+Port: Server Port
+"Query port": Query Port (optional)
+
+button:
+  save: Speichern
+  cancel: Abbrechen
+
+table:
+  servers:
+    head:
+      name: Server Name
+      actions: Aktionen

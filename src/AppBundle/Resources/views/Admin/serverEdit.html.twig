@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    {% for name, form in forms %}
+                        <li role="presentation"{% if loop.index == 1 %} class="active"{% endif %}>
+                            <a href="#{{ name }}" data-toggle="tab" aria-controls="{{ name }}" role="tab">
+                                {{ ('server.formtab.' ~ name) | trans }}
+                            </a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+                <div class="tab-content">
+                    {% for name, form in forms %}
+                        <div role="tabpanel" class="tab-pane{% if loop.index == 1 %} active{% endif %}" id="{{ name }}">
+                            <form class="form-horizontal">
+                                {{ form_widget(form) }}
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">{% trans %}
+                                        button.save{% endtrans %}</button>
+                                    <a class="btn btn-default" href="{{ path('app_admin_servers') }}">{% trans %}
+                                        button.cancel{% endtrans %}</a>
+                                </div>
+                            </form>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $('[data-toggle]').tab();
+    </script>
+{% endblock javascripts %}
+
