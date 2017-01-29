@@ -20,6 +20,10 @@ class DefaultController extends Controller
             $this->addFlash('info', "flash.servers.not_configured");
             return $this->redirect($this->generateUrl('app_admin_serveredit'));
         }
-        return [];
+
+        foreach (AbstractServer::getDiscriminatorMap() as $name => $class) {
+            $servers[$name] = $this->getDoctrine()->getRepository($class)->findAll();
+        }
+        return ['servers' => $servers];
     }
 }

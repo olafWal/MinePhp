@@ -3,10 +3,43 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-
-            </div>
-
+            {% for server in servers['bungee'] %}
+                <div class="col-sm-12">
+                    {{ server.name }}
+                </div>
+            {% endfor %}
         </div>
+        <div class="row">
+            {% for server in servers['minecraft'] %}
+                <div class="col-sm-12 col-md-6">
+                    <div class="panel panel-success minecraft-server-panel" data-serverid="{{ server.id }}">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-sm-12"><span class="h3">{{ server.name }}</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">{{ server.description }}</div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                <li class="list-group-item">{% trans %}server.status.current_users{% endtrans %}<span
+                                            class="badge" data-property="players_online">0</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
     </div>
 {% endblock content %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(function () {
+            $('.minecraft-server-panel').minecraftServerPanel()
+        })
+    </script>
+
+{% endblock javascripts %}

@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 class MinecraftServer extends AbstractServer
 {
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     protected $queryPort;
 

@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 class BungeeServer extends AbstractServer
 {
     /** @var  integer
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     protected $queryPort;
 

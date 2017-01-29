@@ -46,7 +46,15 @@ assetic:
             node_paths: [/usr/local/lib/node_modules]
             apply_to: ".less$"
         cssrewrite: ~
-
+    assets:
+       jscomponents:
+          inputs:
+             - "%kernel.root_dir%/../vendor/components/jqueryui/jquery-ui.js"
+          output: "js/jqueryui.js"
+       custom:
+          inputs:
+             - "%kernel.root_dir%/../app/Resources/js/*.js"
+          output: "js/custom.js"
 braincrafted_bootstrap:
     css_preprocessor: less
     customize:

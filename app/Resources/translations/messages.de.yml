@@ -11,6 +11,8 @@ server:
   formtab:
     minecraft: Minecraft Server
     bungee: Bungee Server
+  status:
+    current_users: Users online
 
 Name: Name
 Description: Beschreibung
@@ -27,3 +29,4 @@ table:
     head:
       name: Server Name
       actions: Aktionen
+      description: Beschreibung

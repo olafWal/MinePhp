@@ -9,6 +9,7 @@
                 <thead>
                 <tr>
                     <td>{% trans %}table.servers.head.name{% endtrans %}</td>
+                    <td>{% trans %}table.servers.head.description{% endtrans %}</td>
                     <td>{% trans %}table.servers.head.actions{% endtrans %}</td>
                 </tr>
                 </thead>
@@ -16,6 +17,7 @@
                 {% for server in servers %}
                     <tr>
                         <td>{{ server.name }}</td>
+                        <td>{{ server.description }}</td>
                         <td><a href="{{ path('app_admin_serveredit', {'id': server.id}) }}"
                                class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></a>
                             <a class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a></td>
@@ -24,7 +26,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                    <td></td>
+                    <td colspan="2"></td>
                     <td><a href="{{ path('app_admin_serveredit') }}" class="btn btn-primary btn-sm"><span
                                     class="glyphicon glyphicon-plus"></span></a></td>
                 </tr>

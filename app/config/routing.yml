@@ -7,3 +7,9 @@ admin:
     resource: "@AppBundle/Controller/AdminController.php"
     type:     annotation
     prefix: /admin
+ajax:
+    resource: "@AppBundle/Controller/AjaxController.php"
+    type:     annotation
+    prefix: /ajax
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
