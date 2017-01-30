@@ -16,6 +16,13 @@
 <body>
 {% block body %}
     <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {{ knp_menu_render('AppBundle:Builder:mainMenu', { 'style': 'tabs' }) }}
+            </div>
+        </div>
+    </div>
+    <div class="container">
         {% include 'BraincraftedBootstrapBundle::flash.html.twig' %}
         {% block content %}
         {% endblock content %}

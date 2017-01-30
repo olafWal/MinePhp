@@ -13,7 +13,7 @@ $.widget("minephp.minecraftServerPanel", {
         this._loadData();
         window.setInterval(function () {
             self._loadData()
-        }, 10000);
+        }, 60000);
     },
     _loadData: function () {
         var self = this;
@@ -26,6 +26,11 @@ $.widget("minephp.minecraftServerPanel", {
         });
     },
     _updateDisplay: function (data) {
+        console.log(data);
         $(this.element).find('[data-property=players_online]').html(data['players']['online']);
+        if (data['favicon']) {
+            $(this.element).find('[data-property=img]').html('<img class="img-rounded" src="' + data['favicon'] + '"/>')
+        }
+
     }
 });

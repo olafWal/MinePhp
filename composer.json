@@ -49,7 +49,8 @@
     "xpaw/php-minecraft-query": "^2.0",
     "fortawesome/font-awesome": "~4.0",
     "components/jqueryui": "^1.12",
-    "friendsofsymfony/jsrouting-bundle": "^1.6"
+    "friendsofsymfony/jsrouting-bundle": "^1.6",
+    "knplabs/knp-menu-bundle": "^2.1"
   },
   "require-dev": {
     "sensio/generator-bundle": "^3.0",

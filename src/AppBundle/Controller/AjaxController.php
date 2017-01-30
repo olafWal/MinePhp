@@ -17,11 +17,14 @@ class AjaxController extends Controller
     {
         $server = $this->getDoctrine()->getRepository(AbstractServer::class)->find($id);
         $ping = new MinecraftPing($server->getAddress(), $server->getPort(), 1);
+
         $ping->Connect();
         // TODO: Error Handling
+        $pingData = $ping->Query();
+
         $result = [
             'success' => true,
-            'data' => $ping->Query()
+            'data' => $pingData
         ];
 
 
