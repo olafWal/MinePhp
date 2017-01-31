@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             // new JMS\TranslationBundle\JMSTranslationBundle(), // TODO: Add again once it is compatible with twig 2.0
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
             new AppBundle\AppBundle(),
         ];
 

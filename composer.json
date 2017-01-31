@@ -50,7 +50,8 @@
     "fortawesome/font-awesome": "~4.0",
     "components/jqueryui": "^1.12",
     "friendsofsymfony/jsrouting-bundle": "^1.6",
-    "knplabs/knp-menu-bundle": "^2.1"
+    "knplabs/knp-menu-bundle": "^2.1",
+    "friendsofsymfony/user-bundle": "dev-master"
   },
   "require-dev": {
     "sensio/generator-bundle": "^3.0",

@@ -34,7 +34,7 @@ class Builder implements ContainerAwareInterface
         $menu = $factory->createItem('root');
 
         $menu->addChild('menu.account', ['route' => 'homepage']);
-        $menu['menu.account']->addChild('menu.logout', ['route' => 'app_admin_servers']); // TODO: Change!!!
+        $menu['menu.account']->addChild('menu.logout', ['route' => 'fos_user_security_logout']); // TODO: Change!!!
         return $menu;
     }
     
