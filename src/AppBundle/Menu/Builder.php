@@ -33,8 +33,8 @@ class Builder implements ContainerAwareInterface
     {
         $menu = $factory->createItem('root');
 
-        $menu->addChild('Account', ['route' => 'homepage']);
-        $menu['Account']->addChild('Logout', ['route' => 'app_admin_servers']);
+        $menu->addChild('menu.account', ['route' => 'homepage']);
+        $menu['menu.account']->addChild('menu.logout', ['route' => 'app_admin_servers']); // TODO: Change!!!
         return $menu;
     }
     

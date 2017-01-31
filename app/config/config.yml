@@ -59,7 +59,6 @@ braincrafted_bootstrap:
     css_preprocessor: less
     customize:
         variables_file: %kernel.root_dir%/Resources/less/variables.less
-    icon_prefix: fa
 # Doctrine Configuration
 doctrine:
     dbal:

@@ -34,3 +34,5 @@ menu:
   home: Homepage
   admin: Admin
   servers: Server
+  logout: Logout
+  account: Account

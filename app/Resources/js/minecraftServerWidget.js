@@ -9,7 +9,6 @@ $.widget("minephp.minecraftServerPanel", {
     _create: function () {
         var self = this;
         this.serverId = $(this.element).data('serverid');
-        console.log(this.serverId);
         this._loadData();
         window.setInterval(function () {
             self._loadData()
@@ -22,14 +21,20 @@ $.widget("minephp.minecraftServerPanel", {
             type: "GET",
             context: self
         }).done(function (res) {
-            this._updateDisplay(res.data);
+            this._updateDisplay(res);
         });
     },
-    _updateDisplay: function (data) {
-        console.log(data);
-        $(this.element).find('[data-property=players_online]').html(data['players']['online']);
-        if (data['favicon']) {
-            $(this.element).find('[data-property=img]').html('<img class="img-rounded" src="' + data['favicon'] + '"/>')
+    _updateDisplay: function (res) {
+        if (res.success) {
+            var pingData = res.data.pingData;
+            $(this.element).removeClass('panel-danger').addClass('panel-success');
+            $(this.element).find('[data-property=players_online]').html(pingData.players.online);
+            if (pingData.favicon) {
+                $(this.element).find('[data-property=img]').html('<img class="img-rounded" src="' + pingData.favicon + '"/>')
+            }
+        }
+        else {
+            $(this.element).removeClass('panel-success').addClass('panel-danger');
         }
 
     }
