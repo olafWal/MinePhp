@@ -22,9 +22,9 @@ class Builder implements ContainerAwareInterface
     {
         $menu = $factory->createItem('root');
 
-        $menu->addChild('Home', ['route' => 'homepage']);
-        $menu->addChild('Admin', ['route' => 'app_admin_index']);
-        $menu['Admin']->addChild('Servers', ['route' => 'app_admin_servers']);
+        $menu->addChild('menu.home', ['route' => 'homepage']);
+        $menu->addChild('menu.admin', ['route' => 'app_admin_index']);
+        $menu['menu.admin']->addChild('menu.servers', ['route' => 'app_admin_servers']);
         return $menu;
     }
 }

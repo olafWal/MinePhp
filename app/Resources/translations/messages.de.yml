@@ -30,3 +30,7 @@ table:
       name: Server Name
       actions: Aktionen
       description: Beschreibung
+menu:
+  home: Homepage
+  admin: Admin
+  servers: Server
