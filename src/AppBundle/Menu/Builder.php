@@ -27,4 +27,15 @@ class Builder implements ContainerAwareInterface
         $menu['menu.admin']->addChild('menu.servers', ['route' => 'app_admin_servers']);
         return $menu;
     }
+    
+    public function rightMenu(FactoryInterface $factory, /** @noinspection PhpUnusedParameterInspection */
+                             array $options)
+    {
+        $menu = $factory->createItem('root');
+
+        $menu->addChild('Account', ['route' => 'homepage']);
+        $menu['Account']->addChild('Logout', ['route' => 'app_admin_servers']);
+        return $menu;
+    }
+    
 }

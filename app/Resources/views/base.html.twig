@@ -15,13 +15,31 @@
 
 <body>
 {% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                {{ knp_menu_render('AppBundle:Builder:mainMenu', { 'style': 'tabs' }) }}
-            </div>
-        </div>
+<nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle"
+                data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Brand</a>
     </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        {{ knp_menu_render('AppBundle:Builder:mainMenu', { 'style': 'navbar' }) }}
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        {{ knp_menu_render('AppBundle:Builder:rightMenu', { 'style': 'navbar-right' }) }}
+    </div><!-- /.navbar-collapse -->
+</nav>
     <div class="container">
         {% include 'BraincraftedBootstrapBundle::flash.html.twig' %}
         {% block content %}
