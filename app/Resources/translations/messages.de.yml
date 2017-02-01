@@ -31,8 +31,24 @@ table:
       actions: Aktionen
       description: Beschreibung
 menu:
-  home: Homepage
-  admin: Admin
-  servers: Server
-  logout: Logout
-  account: Account
+  login: .icon-sign-in Login
+  home: .icon-home Homepage
+  admin: .icon-user-secret Admin
+  servers: Servers .icon-server
+  logout: .icon-sign-out Logout
+  account: .icon-user Account
+  profile: .icon-id-card Profil
+  changepass: .icon-key Passwort ändern
+message:
+  servers:
+    not_configured: "Keine Server gefunden"
+
+panel:
+  login:
+     header: Einloggen
+  profile:
+     header: Profil
+  profile_edit:
+     header: Profil bearbeiten
+  password:
+     header: Passwort ändern

@@ -17,8 +17,15 @@ class DefaultController extends Controller
     {
         $servers = $this->getDoctrine()->getRepository(AbstractServer::class)->findAll();
         if (!count($servers)) {
-            $this->addFlash('info', "flash.servers.not_configured");
-            return $this->redirect($this->generateUrl('app_admin_serveredit'));
+            if ($this->isGranted('ROLE_ADMIN')) {
+                $this->addFlash('info', "flash.servers.not_configured");
+                return $this->redirect($this->generateUrl('app_admin_serveredit'));
+            }
+            else {
+                return [
+                    'servers' => []
+                ];
+            }
         }
 
         foreach (AbstractServer::getDiscriminatorMap() as $name => $class) {

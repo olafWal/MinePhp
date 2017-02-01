@@ -42,8 +42,8 @@ twig:
 assetic:
     filters:
         less:
-            node: /usr/local/bin/node
-            node_paths: [/usr/local/lib/node_modules]
+            node: "%nodejs%"
+            node_paths: "%node_modules%"
             apply_to: ".less$"
         cssrewrite: ~
     assets:
@@ -58,7 +58,8 @@ assetic:
 braincrafted_bootstrap:
     css_preprocessor: less
     customize:
-        variables_file: %kernel.root_dir%/Resources/less/variables.less
+        variables_file: "%kernel.root_dir%/Resources/less/variables.less"
+    icon_prefix: fa
 # Doctrine Configuration
 doctrine:
     dbal:

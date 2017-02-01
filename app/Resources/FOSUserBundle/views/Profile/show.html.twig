@@ -1,0 +1,10 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block panel_header %}
+    {{ icon('id-card') }} {% trans %}panel.profile.header{% endtrans %}
+    <span class="badge pull-right"><a href="{{ path('fos_user_profile_edit') }}">{{ icon('pencil') }}</a></span>
+{% endblock panel_header %}
+
+{% block fos_user_content %}
+{% include "@FOSUser/Profile/show_content.html.twig" %}
+{% endblock fos_user_content %}
