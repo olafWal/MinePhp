@@ -12,3 +12,9 @@ Planned features (as of 2017/01)
 * Show "Query" Information (if server supports it)
 * Possibility to send RCON Commands (if server supports it)
 
+Demo site coming soon, contributors welcome!
+
+Setup Info
+---------
+
+TBD
