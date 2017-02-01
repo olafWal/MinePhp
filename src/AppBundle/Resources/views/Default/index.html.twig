@@ -14,26 +14,26 @@
         <div class="row">
             {% for server in servers['bungee'] %}
                 <div class="col-sm-12">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="panel panel-success minecraft-server-panel" data-serverid="{{ server.id }}">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-sm-12"><span class="h3">{{ server.name }}</span><span
-                                                data-property="img"
-                                                class="pull-right minecraft-server-icon-container"></span></div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12">{{ server.description }}</div>
-                                </div>
+
+                    <div class="panel panel-success minecraft-server-panel" data-serverid="{{ server.id }}">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-sm-12"><span class="h3">{{ server.name }}</span><span
+                                            data-property="img"
+                                            class="pull-right minecraft-server-icon-container"></span></div>
                             </div>
-                            <div class="panel-body">
-                                <ul class="list-group">
-                                    <li class="list-group-item">{% trans %}server.status.current_users{% endtrans %}
-                                        <span
-                                                class="badge" data-property="players_online">0</span></li>
-                                </ul>
+                            <div class="row">
+                                <div class="col-sm-12">{{ server.description }}</div>
                             </div>
                         </div>
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                <li class="list-group-item">{% trans %}server.status.current_users{% endtrans %}
+                                    <span
+                                            class="badge" data-property="players_online">0</span></li>
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
             {% endfor %}
