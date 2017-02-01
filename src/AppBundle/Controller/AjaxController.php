@@ -3,8 +3,8 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\AbstractServer;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use xPaw\MinecraftPing;
 use xPaw\MinecraftPingException;
@@ -16,6 +16,7 @@ class AjaxController extends Controller
      */
     public function queryServerAction($id)
     {
+        /** @var AbstractServer $server */
         $server = $this->getDoctrine()->getRepository(AbstractServer::class)->find($id);
         $success = true;
         $pingData = null;
@@ -31,7 +32,7 @@ class AjaxController extends Controller
         $result = [
             'success' => $success,
             'data' => [
-                'pingData' => $pingData
+                'pingData' => $pingData,
             ]
         ];
 

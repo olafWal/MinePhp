@@ -173,5 +173,10 @@ abstract class AbstractServer
 
         return $this;
     }
+
+    public function getQueryPort()
+    {
+        return null;
+    }
 }
 

@@ -4,7 +4,8 @@
 $.widget("minephp.minecraftServerPanel", {
     serverId: null,
     options: {
-        dataRoute: 'app_ajax_queryserver'
+        dataRoute: 'app_ajax_queryserver',
+        refreshInterval: 20000
     },
     _create: function () {
         var self = this;
@@ -12,7 +13,7 @@ $.widget("minephp.minecraftServerPanel", {
         this._loadData();
         window.setInterval(function () {
             self._loadData()
-        }, 60000);
+        }, self.options.refreshInterval);
     },
     _loadData: function () {
         var self = this;
@@ -32,6 +33,15 @@ $.widget("minephp.minecraftServerPanel", {
             if (pingData.favicon) {
                 $(this.element).find('[data-property=img]').html('<img class="img-rounded" src="' + pingData.favicon + '"/>')
             }
+            var playersString = "&nbsp;";
+            if (pingData.players.sample) {
+                var sampleData = pingData.players.sample;
+
+                for (var i = 0; i < sampleData.length; i++) {
+                    playersString += '<span class="badge">' + sampleData[i].name + '</span>';
+                }
+            }
+            $(this.element).find('[data-property=sample]').html(playersString);
         }
         else {
             $(this.element).removeClass('panel-success').addClass('panel-danger');
