@@ -101,9 +101,9 @@ jms_translation:
         app:
             dirs: ["%kernel.root_dir%/Resources", "%kernel.root_dir%/../src/"]
             output_dir: "%kernel.root_dir%/Resources/translations"
-            ignored_domains: [routes, validators]
+            ignored_domains: [routes, validators,FOSUserBundle]
             excluded_names: ["*TestCase.php", "*Test.php"]
-            excluded_dirs: [cache, data, logs, FOSUserBundle]
+            excluded_dirs: [cache, data, logs]
             output_format: xliff
 
 jms_i18n_routing:
