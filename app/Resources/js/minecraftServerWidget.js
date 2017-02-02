@@ -36,7 +36,6 @@ $.widget("minephp.minecraftServerPanel", {
             var playersString = "&nbsp;";
             if (pingData.players.sample) {
                 var sampleData = pingData.players.sample;
-
                 for (var i = 0; i < sampleData.length; i++) {
                     playersString += '<span class="badge">' + sampleData[i].name + '</span>';
                 }
@@ -46,6 +45,5 @@ $.widget("minephp.minecraftServerPanel", {
         else {
             $(this.element).removeClass('panel-success').addClass('panel-danger');
         }
-
     }
 });
