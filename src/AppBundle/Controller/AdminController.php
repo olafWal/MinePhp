@@ -8,7 +8,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
-use xPaw\MinecraftPing;
 
 class AdminController extends Controller
 {
@@ -18,15 +17,7 @@ class AdminController extends Controller
      */
     public function indexAction()
     {
-        $ping = new MinecraftPing('localhost', 25566, 1);
-
-        $ping->Connect();
-
-        $result = $ping->Query();
-
-
-        return ['ping' => $result];
-
+        return [];
     }
 
     /**
