@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale|split('_')[0] }}">
 <head>
 
     <title>{% block title %}{% trans %}app.title{% endtrans %}{% endblock %}</title>
@@ -45,6 +45,12 @@
         {% endblock content %}
     </div>
 {% endblock body %}
+<script src="{{ asset('bundles/bazingajstranslation/js/translator.min.js') }}"></script>
+<!-- translations from the messages domain -->
+<script src="{{ url('bazinga_jstranslation_js') }}"></script>
+<!-- Additional tranlations, may be removed later -->
+<script src="{{ url('bazinga_jstranslation_js', { 'domain': 'forms' }) }}"></script>
+<script src="{{ url('bazinga_jstranslation_js', { 'domain': 'menu' }) }}"></script>
 <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
 <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
 <script src="{{ asset('js/jquery.js') }}"></script>
