@@ -8,9 +8,9 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <td>{% trans %}table.servers.head.name{% endtrans %}</td>
-                    <td>{% trans %}table.servers.head.description{% endtrans %}</td>
-                    <td>{% trans %}table.servers.head.actions{% endtrans %}</td>
+                    <td>{{ 'table.servers.head.name' | trans | desc('Name') }}</td>
+                    <td>{{ 'table.servers.head.description' | trans | desc('Description') }}</td>
+                    <td>{{ 'table.servers.head.actions' | trans | desc('Actions') }}</td>
                 </tr>
                 </thead>
                 <tbody>

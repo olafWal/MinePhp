@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
             new JMS\TranslationBundle\JMSTranslationBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),

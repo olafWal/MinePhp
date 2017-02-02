@@ -5,8 +5,8 @@
         <div class="panel panel-danger">
             <div class="panel-heading">
                 <h1 class="text-center">
-                    {{ icon('exclamation-triangle') }} {% trans %}
-                    message.servers.not_configured{% endtrans %} {{ icon('exclamation-triangle') }}
+                    {{ icon('exclamation-triangle') }}
+                    {{ "message.servers.not_configured" | trans | desc ("No Servers configured") }} {{ icon('exclamation-triangle') }}
                 </h1>
             </div>
         </div>
@@ -14,7 +14,6 @@
         <div class="row">
             {% for server in servers['bungee'] %}
                 <div class="col-sm-12">
-
                     <div class="panel panel-success minecraft-server-panel" data-serverid="{{ server.id }}">
                         <div class="panel-heading">
                             <div class="row">
@@ -28,7 +27,7 @@
                         </div>
                         <div class="panel-body">
                             <ul class="list-group">
-                                <li class="list-group-item">{% trans %}server.status.current_users{% endtrans %}
+                                <li class="list-group-item">{{ 'server.status.current_users' | trans | desc('Online users') }}
                                     <span
                                             class="badge" data-property="players_online">0</span></li>
                             </ul>
@@ -54,7 +53,7 @@
                         </div>
                         <div class="panel-body">
                             <ul class="list-group">
-                                <li class="list-group-item">{% trans %}server.status.current_users{% endtrans %}
+                                <li class="list-group-item">{{ 'server.status.current_users' | trans | desc('Online users') }}
                                     <span
                                             class="badge" data-property="players_online">0</span></li>
                                 <li class="list-group-item " data-property="sample">&nbsp;</li>

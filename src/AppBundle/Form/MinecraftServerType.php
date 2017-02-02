@@ -12,7 +12,7 @@ class MinecraftServerType extends AbstractServerType
      */
     public function addFields(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('queryPort', null, ['required' => false]);
+        $builder->add('queryPort', null, ['required' => false, 'label' => 'form.field.server.queryPort']);
     }
 
     /**
@@ -20,9 +20,10 @@ class MinecraftServerType extends AbstractServerType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\MinecraftServer'
-        ));
+        $resolver->setDefaults([
+            'data_class' => 'AppBundle\Entity\MinecraftServer',
+            'translation_domain' => 'forms'
+        ]);
     }
 
     /**

@@ -9,7 +9,7 @@
                     {% for name, form in forms %}
                         <li role="presentation"{% if loop.index == 1 %} class="active"{% endif %}>
                             <a href="#{{ name }}" data-toggle="tab" aria-controls="{{ name }}" role="tab">
-                                {{ ('server.formtab.' ~ name) | trans }}
+                                {{ ('server.formtab.' ~ name) | trans({}, 'forms') }}
                             </a>
                         </li>
                     {% endfor %}
@@ -21,10 +21,12 @@
                             <form class="form-horizontal" method="post">
                                 {{ form_widget(form) }}
                                 <div class="form-actions">
-                                    <button type="submit" class="btn btn-primary">{% trans %}
-                                        button.save{% endtrans %}</button>
-                                    <a class="btn btn-default" href="{{ path('app_admin_servers') }}">{% trans %}
-                                        button.cancel{% endtrans %}</a>
+                                    <button type="submit" class="btn btn-primary">
+                                       {{  "button.save" | trans | desc('Save button')}}
+                                    </button>
+                                    <a class="btn btn-default" href="{{ path('app_admin_servers') }}">
+                                        {{  "button.cancel" | trans | desc('Cancel Button')}}
+                                    </a>
                                 </div>
                             </form>
                         </div>

@@ -10,6 +10,7 @@ namespace AppBundle\Menu;
 
 
 use Knp\Menu\FactoryInterface;
+use Symfony\Bundle\FrameworkBundle\Translation\Translator;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
@@ -30,12 +31,29 @@ class Builder implements ContainerAwareInterface
         /** @noinspection PhpUnusedParameterInspection */
         array $options
     ) {
+        /** @var Translator $translator */
+        $translator = $this->container->get('translator');
         $menu = $factory->createItem('root');
 
-        $menu->addChild('menu.home', ['route' => 'homepage']);
+        $menu->addChild('menu.home', [
+                'route' => 'homepage',
+                'label' => $translator->trans('menu.home', [], 'menu')
+            ]
+        )->setExtra('translation_domain', false);
+
         if ($this->securityContext->isGranted('ROLE_ADMIN')) {
-            $menu->addChild('menu.admin', ['route' => 'app_admin_index']);
-            $menu['menu.admin']->addChild('menu.servers', ['route' => 'app_admin_servers']);
+
+            $menu->addChild('menu.admin', [
+                    'route' => 'app_admin_index',
+                    'label' => $translator->trans('menu.admin', [], 'menu')
+                ]
+            )->setExtra('translation_domain', false);;
+
+            $menu['menu.admin']->addChild('menu.servers', [
+                    'route' => 'app_admin_servers',
+                    'label' => $translator->trans('menu.servers', [], 'menu')
+                ]
+            )->setExtra('translation_domain', false);;
         }
         return $menu;
     }
@@ -45,15 +63,38 @@ class Builder implements ContainerAwareInterface
         /** @noinspection PhpUnusedParameterInspection */
         array $options
     ) {
+        $translator = $this->container->get('translator');
         $menu = $factory->createItem('root');
         if ($this->securityContext->isGranted('ROLE_USER')) {
-            $menu->addChild('menu.account');
-            $menu['menu.account']->addChild('menu.profile', ['route' => 'fos_user_profile_show']);
-            $menu['menu.account']->addChild('menu.changepass', ['route' => 'fos_user_change_password']);
-            $menu['menu.account']->addChild('menu.logout', ['route' => 'fos_user_security_logout']);
-        }
-        else {
-            $menu->addChild('menu.login', ['route' => 'fos_user_security_login']);
+
+            $menu->addChild('menu.account', [
+                    'label' => $translator->trans('menu.account', [], 'menu')
+                ]
+            )->setExtra('translation_domain', false);
+
+            $menu['menu.account']->addChild('menu.profile', [
+                    'route' => 'fos_user_profile_show',
+                    'label' => $translator->trans('menu.profile', [], 'menu')
+                ]
+            )->setExtra('translation_domain', false);
+
+            $menu['menu.account']->addChild('menu.changepass', [
+                    'route' => 'fos_user_change_password',
+                    'label' => $translator->trans('menu.changepass', [], 'menu')
+                ]
+            )->setExtra('translation_domain', false);
+
+            $menu['menu.account']->addChild('menu.logout', [
+                    'route' => 'fos_user_security_logout',
+                    'label' => $translator->trans('menu.logout', [], 'menu')
+                ]
+            )->setExtra('translation_domain', false);;
+        } else {
+            $menu->addChild('menu.login', [
+                    'route' => 'fos_user_security_login',
+                    'label' => $translator->trans('menu.login', [], 'menu')
+                ]
+            )->setExtra('translation_domain', false);;
         }
         return $menu;
     }

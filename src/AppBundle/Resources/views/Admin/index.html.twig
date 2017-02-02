@@ -1,7 +1,7 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}{% trans %}app.admin.title{% endtrans %}{% endblock %}
+{% block title %}{{ "app.admin.title" | trans | desc("Admin index Page title")}}{% endblock %}
 
 {% block content %}
-    Huhu
+    TBD
 {% endblock content %}
