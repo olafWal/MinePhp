@@ -3,8 +3,8 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\AbstractServer;
-use AppBundle\Entity\User;
 use AppBundle\Form\UserType;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 use JMS\TranslationBundle\Model\Message;
 use JMS\TranslationBundle\Translation\TranslationContainerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -16,8 +16,24 @@ use Symfony\Component\HttpFoundation\Request;
 class AdminController extends Controller implements TranslationContainerInterface
 {
     /**
+     * Returns an array of messages.
+     *
+     * @return array<Message>
+     */
+    public static function getTranslationMessages()
+    {
+        return [
+            new Message('flash.user.notfound', 'messages'),
+            new Message('flash.server.notfound', 'messages'),
+            new Message('flash.user.updated', 'messages'),
+            new Message('flash.user.created', 'messages'),
+        ];
+    }
+
+    /**
      * @Route("/")
      * @Template()
+     * @Secure(roles="ROLE_ADMIN")
      */
     public function indexAction()
     {
@@ -27,6 +43,7 @@ class AdminController extends Controller implements TranslationContainerInterfac
     /**
      * @Route("/servers")
      * @Template()
+     * @Secure(roles="ROLE_ADMIN")
      */
     public function serversAction()
     {
@@ -39,6 +56,7 @@ class AdminController extends Controller implements TranslationContainerInterfac
     /**
      * @Route("/server_edit/{id}")
      * @Template()
+     * @Secure(roles="ROLE_ADMIN")
      */
     public function serverEditAction(Request $request, $id = null)
     {
@@ -97,6 +115,7 @@ class AdminController extends Controller implements TranslationContainerInterfac
     /**
      * @Route("/users")
      * @Template()
+     * @Secure(roles="ROLE_SUPER_ADMIN")
      */
     public function usersAction()
     {
@@ -111,6 +130,7 @@ class AdminController extends Controller implements TranslationContainerInterfac
     /**
      * @Route("/user_edit/{id}")
      * @Template()
+     * @Secure(roles="ROLE_SUPER_ADMIN")
      */
     public function userEditAction(Request $request, $id = null)
     {
@@ -123,8 +143,7 @@ class AdminController extends Controller implements TranslationContainerInterfac
                 return $this->redirect($this->generateUrl('app_admin_servers'));
             }
 
-        }
-        else {
+        } else {
             $user = $userManager->createUser();
             $flashMessage = 'flash.user.created';
         }
@@ -135,9 +154,9 @@ class AdminController extends Controller implements TranslationContainerInterfac
             $form->handleRequest($request);
             if ($form->isValid()) {
                 $newpass = $form->get('password')->getData();
-                   if ($newpass) {
-                        $user->setPlainPassword($newpass);
-                   }
+                if ($newpass) {
+                    $user->setPlainPassword($newpass);
+                }
                 $userManager->updateUser($user, true);
                 $this->addFlash('success', $flashMessage);
                 return $this->redirect($this->generateUrl('app_admin_users'));
@@ -146,21 +165,6 @@ class AdminController extends Controller implements TranslationContainerInterfac
 
         return [
             'form' => $form->createView()
-        ];
-    }
-
-    /**
-     * Returns an array of messages.
-     *
-     * @return array<Message>
-     */
-    public static function getTranslationMessages()
-    {
-        return [
-            new Message('flash.user.notfound','messages'),
-            new Message('flash.server.notfound','messages'),
-            new Message('flash.user.updated','messages'),
-            new Message('flash.user.created','messages'),
         ];
     }
 }

@@ -27,6 +27,7 @@ class UserType extends AbstractType implements TranslationContainerInterface
         $builder
             ->add('username', null, ['label' => 'field.user.name'])
             ->add('email', null, ['label' => 'field.user.email'])
+            ->add('enabled', null, ['label' => 'field.user.enabled'])
             ->add('roles', ChoiceType::class, [
                 'multiple' => true,
                 'expanded' => true,

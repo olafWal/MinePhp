@@ -47,13 +47,20 @@ class Builder implements ContainerAwareInterface
                     'route' => 'app_admin_index',
                     'label' => $translator->trans('menu.admin', [], 'menu')
                 ]
-            )->setExtra('translation_domain', false);;
+            )->setExtra('translation_domain', false);
 
+            if ($this->securityContext->isGranted('ROLE_SUPER_ADMIN')) {
+                $menu['menu.admin']->addChild('menu.users', [
+                        'route' => 'app_admin_users',
+                        'label' => $translator->trans('menu.users', [], 'menu')
+                    ]
+                )->setExtra('translation_domain', false);
+            }
             $menu['menu.admin']->addChild('menu.servers', [
                     'route' => 'app_admin_servers',
                     'label' => $translator->trans('menu.servers', [], 'menu')
                 ]
-            )->setExtra('translation_domain', false);;
+            )->setExtra('translation_domain', false);
         }
         return $menu;
     }

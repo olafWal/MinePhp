@@ -12,6 +12,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller implements TranslationContainerInterface
 {
     /**
+     * Returns an array of messages.
+     *
+     * @return array<Message>
+     */
+    public static function getTranslationMessages()
+    {
+        return [
+            new Message('flash.servers.not_configured', 'messages'),
+        ];
+    }
+
+    /**
      * @Route("/", name="homepage")
      * @Template()
      */
@@ -22,8 +34,7 @@ class DefaultController extends Controller implements TranslationContainerInterf
             if ($this->isGranted('ROLE_ADMIN')) {
                 $this->addFlash('info', "flash.servers.not_configured");
                 return $this->redirect($this->generateUrl('app_admin_serveredit'));
-            }
-            else {
+            } else {
                 return [
                     'servers' => []
                 ];
@@ -34,17 +45,5 @@ class DefaultController extends Controller implements TranslationContainerInterf
             $servers[$name] = $this->getDoctrine()->getRepository($class)->findAll();
         }
         return ['servers' => $servers];
-    }
-
-    /**
-     * Returns an array of messages.
-     *
-     * @return array<Message>
-     */
-    public static function getTranslationMessages()
-    {
-        return [
-            new Message('flash.servers.not_configured','messages'),
-        ];
     }
 }
