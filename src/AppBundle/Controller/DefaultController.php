@@ -3,11 +3,13 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\AbstractServer;
+use JMS\TranslationBundle\Model\Message;
+use JMS\TranslationBundle\Translation\TranslationContainerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class DefaultController extends Controller implements TranslationContainerInterface
 {
     /**
      * @Route("/", name="homepage")
@@ -32,5 +34,17 @@ class DefaultController extends Controller
             $servers[$name] = $this->getDoctrine()->getRepository($class)->findAll();
         }
         return ['servers' => $servers];
+    }
+
+    /**
+     * Returns an array of messages.
+     *
+     * @return array<Message>
+     */
+    public static function getTranslationMessages()
+    {
+        return [
+            new Message('flash.servers.not_configured','messages'),
+        ];
     }
 }

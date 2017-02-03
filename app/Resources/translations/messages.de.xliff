@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2017-02-02T15:33:53Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+  <file date="2017-02-03T11:09:45Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -20,11 +20,33 @@
         <source>Cancel Button</source>
         <target>Abbrechen</target>
         <jms:reference-file line="28">/../src/AppBundle/Resources/views/Admin/serverEdit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">/../src/AppBundle/Resources/views/Admin/userEdit.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="0dfce19eb3a921df65cf84487a8c5f6dd7d9e878" resname="button.save">
         <source>Save button</source>
         <target>Speichern</target>
         <jms:reference-file line="25">/../src/AppBundle/Resources/views/Admin/serverEdit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">/../src/AppBundle/Resources/views/Admin/userEdit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e1115e5af5b6274af6c43691bddf03a2e9bcc53c" resname="flash.server.notfound">
+        <source>flash.server.notfound</source>
+        <target>Server nicht gefunden</target>
+      </trans-unit>
+      <trans-unit id="555e92f0cd411ce91f8c2b62c682f757ea610de4" resname="flash.servers.not_configured">
+        <source>flash.servers.not_configured</source>
+        <target>Keine Server konfiguriert</target>
+      </trans-unit>
+      <trans-unit id="fa00e299aefa6480b31ab0d45c785ef163233aae" resname="flash.user.created">
+        <source>flash.user.created</source>
+        <target>Benutzer wurde angelegt</target>
+      </trans-unit>
+      <trans-unit id="3c3ad516081b28b04a6f6d530e58b80c4c8e54fd" resname="flash.user.notfound">
+        <source>flash.user.notfound</source>
+        <target>Benutzer existiert nicht</target>
+      </trans-unit>
+      <trans-unit id="7d5f57928d3799da0098978c5897dc492d450538" resname="flash.user.updated">
+        <source>flash.user.updated</source>
+        <target>Benutzerdaten aktualisiert</target>
       </trans-unit>
       <trans-unit id="184cb8eb86c4bbe8d2c692ff57b69d83e39adc3f" resname="message.servers.not_configured">
         <source>No Servers configured</source>
@@ -57,6 +79,7 @@
         <source>Actions</source>
         <target>Aktionen</target>
         <jms:reference-file line="13">/../src/AppBundle/Resources/views/Admin/servers.html.twig</jms:reference-file>
+        <jms:reference-file line="13">/../src/AppBundle/Resources/views/Admin/users.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="1070f6b0472f7432f232fe8ae38e398a82e531dc" resname="table.servers.head.description">
         <source>Description</source>
@@ -67,6 +90,16 @@
         <source>Name</source>
         <target>Name</target>
         <jms:reference-file line="11">/../src/AppBundle/Resources/views/Admin/servers.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="230af24e2c3051ac2f484487cf7edd77316c44c0" resname="table.users.head.email">
+        <source>E-Mail</source>
+        <target>E-Mail</target>
+        <jms:reference-file line="12">/../src/AppBundle/Resources/views/Admin/users.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ad03d5dbed2e59f83fb5ec7de7d909107a78c872" resname="table.users.head.name">
+        <source>Name</source>
+        <target>Benutzername</target>
+        <jms:reference-file line="11">/../src/AppBundle/Resources/views/Admin/users.html.twig</jms:reference-file>
       </trans-unit>
     </body>
   </file>
