@@ -5,6 +5,9 @@
     <div class="row">
         <div class="col-sm-12">
             <form class="form-horizontal" method="post">
+                <div class="hidden">
+                    {{ form_widget(form.hack_to_avoid_autofill) }}
+                </div>
                 {{ form_widget(form) }}
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">

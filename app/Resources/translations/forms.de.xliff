@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2017-02-03T11:10:06Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+  <file date="2017-02-03T11:24:06Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -56,10 +56,6 @@
         <target>Query Port</target>
         <jms:reference-file line="15">/../src/AppBundle/Form/BungeeServerType.php</jms:reference-file>
         <jms:reference-file line="15">/../src/AppBundle/Form/MinecraftServerType.php</jms:reference-file>
-      </trans-unit>
-      <trans-unit id="375fca4fc8d3cc2047a92ba3bd04b7383c1c2bd4" resname="password.mismatch">
-        <source>password.mismatch</source>
-        <target>Die Passwörter stimmen nicht überein</target>
       </trans-unit>
       <trans-unit id="71e3ecfd034ed76a8269910c16fe770d7ea631a7" resname="role.admin">
         <source>role.admin</source>

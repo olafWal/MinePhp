@@ -37,13 +37,18 @@ class UserType extends AbstractType implements TranslationContainerInterface
                     'role.superadmin' => User::ROLE_SUPER_ADMIN
                 ]
             ])
+            /* Some browsers always fill the password field even if autocomplete is set to off
+             * So we give them sandbox here to play with ....
+            */
+
+            ->add('hack_to_avoid_autofill',PasswordType::class, ['required' => false, 'mapped' => false, 'attr'=> ['class' => 'hidden']])
             ->add('password', RepeatedType::class, [
                     'mapped' => false,
                     'type' => PasswordType::class,
                     'invalid_message' => 'password.mismatch',
                     'options' => ['attr' => ['class' => 'form-control']],
                     'required' => $passRequired,
-                    'first_options' => ['label' => 'field.password'],
+                    'first_options' => ['label' => 'field.password', 'always_empty' => true, 'attr' => ['autocomplete' => 'off']],
                     'second_options' => ['label' => 'field.password.repeat']
                 ]
             );
