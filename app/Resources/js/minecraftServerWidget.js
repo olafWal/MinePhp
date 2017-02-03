@@ -30,9 +30,6 @@ $.widget("minephp.minecraftServerPanel", {
             var pingData = res.data.pingData;
             $(this.element).removeClass('panel-danger').addClass('panel-success');
             $(this.element).find('[data-property=players_online]').html(pingData.players.online);
-            if (pingData.favicon) {
-                $(this.element).find('[data-property=img]').html('<img class="img-rounded" src="' + pingData.favicon + '"/>')
-            }
             var playersString = "&nbsp;";
             if (pingData.players.sample) {
                 var sampleData = pingData.players.sample;
@@ -41,6 +38,10 @@ $.widget("minephp.minecraftServerPanel", {
                 }
             }
             $(this.element).find('[data-property=sample]').html(playersString);
+
+            if (pingData.favicon) {
+                $(this.element).find('[data-property=img]').html('<img class="img-rounded" src="' + pingData.favicon + '"/>')
+            }
         }
         else {
             $(this.element).removeClass('panel-success').addClass('panel-danger');
