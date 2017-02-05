@@ -9,6 +9,8 @@
 namespace AppBundle\Menu;
 
 
+use AppBundle\Entity\AbstractServer;
+use AppBundle\Entity\MinecraftServer;
 use Knp\Menu\FactoryInterface;
 use Symfony\Bundle\FrameworkBundle\Translation\Translator;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
@@ -41,10 +43,34 @@ class Builder implements ContainerAwareInterface
             ]
         )->setExtra('translation_domain', false);
 
+        if ($this->securityContext->isGranted('ROLE_USER')) {
+            $menu->addChild('menu.rconServers', [
+                    'label' => $translator->trans('menu.servers', [], 'menu')
+                ]
+            )->setExtra('translation_domain', false);
+
+            $menu['menu.rconServers']->addChild('menu.rconServers.list', [
+                    'route' => 'app_rcon_index',
+                    'label' => $translator->trans('menu.rconServers.list', [], 'menu')
+                ]
+            )->setExtra('translation_domain', false);
+            $servers = $this->container->get('doctrine')->getRepository(MinecraftServer::class)->findAll();
+            /** @var MinecraftServer $server */
+            foreach ($servers as $server) {
+                if ($server->getRconPort() && $server->getRconPassword()) {
+                    $menu['menu.rconServers']->addChild('menu.rconServers.' . $server->getId(), [
+                            'route' => 'app_rcon_server',
+                            'routeParameters' => ['id' => $server->getId()],
+                            'label' => '.icon-gamepad ' . $server->getName()
+                        ]
+                    )->setExtra('translation_domain', false);
+
+                }
+            }
+        }
         if ($this->securityContext->isGranted('ROLE_ADMIN')) {
 
             $menu->addChild('menu.admin', [
-                    'route' => 'app_admin_index',
                     'label' => $translator->trans('menu.admin', [], 'menu')
                 ]
             )->setExtra('translation_domain', false);
@@ -56,7 +82,7 @@ class Builder implements ContainerAwareInterface
                     ]
                 )->setExtra('translation_domain', false);
             }
-            $menu['menu.admin']->addChild('menu.servers', [
+            $menu['menu.admin']->addChild('menu.admin.servers', [
                     'route' => 'app_admin_servers',
                     'label' => $translator->trans('menu.servers', [], 'menu')
                 ]

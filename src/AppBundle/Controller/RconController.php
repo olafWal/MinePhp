@@ -21,7 +21,15 @@ class RconController extends Controller
      */
     public function indexAction()
     {
-        return [];
+        $servers = $this->getDoctrine()->getRepository(MinecraftServer::class)->findAll();
+        // TODO: Filter via Repository
+        $rconServers = [];
+        foreach ($servers as $server) {
+            if ($server->getRconPort() && $server->getRconPassword()) {
+                $rconServers[] = $server;
+            }
+        }
+        return ['servers' => $rconServers];
     }
 
     /**

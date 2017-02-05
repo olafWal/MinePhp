@@ -3,7 +3,23 @@
 {% block content %}
     <div class="row">
         <div class="col-sm-12 col-md-6 col-md-offset-3">
-            List RCON enabled servers;
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>{{ 'rcon.table.servername' | trans | desc('Servername') }}</th>
+                    <th>{{ 'rcon.table.actions' | trans | desc('Actions') }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for server in servers %}
+                    <tr>
+                        <td>{{ server.name }}</td>
+                        <td><a class="btn btn-primary"
+                               href="{{ path('app_rcon_server', {'id': server.id}) }}">{{ icon('terminal') }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 

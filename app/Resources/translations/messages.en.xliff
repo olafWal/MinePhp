@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2017-02-04T16:37:52Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+  <file date="2017-02-05T02:05:43Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -30,23 +30,23 @@
       </trans-unit>
       <trans-unit id="e1115e5af5b6274af6c43691bddf03a2e9bcc53c" resname="flash.server.notfound">
         <source>flash.server.notfound</source>
-        <target state="new">flash.server.notfound</target>
+        <target>Server not found</target>
       </trans-unit>
       <trans-unit id="555e92f0cd411ce91f8c2b62c682f757ea610de4" resname="flash.servers.not_configured">
         <source>flash.servers.not_configured</source>
-        <target state="new">flash.servers.not_configured</target>
+        <target>No servers configured</target>
       </trans-unit>
       <trans-unit id="fa00e299aefa6480b31ab0d45c785ef163233aae" resname="flash.user.created">
         <source>flash.user.created</source>
-        <target state="new">flash.user.created</target>
+        <target>User created</target>
       </trans-unit>
       <trans-unit id="3c3ad516081b28b04a6f6d530e58b80c4c8e54fd" resname="flash.user.notfound">
         <source>flash.user.notfound</source>
-        <target state="new">flash.user.notfound</target>
+        <target>User not found</target>
       </trans-unit>
       <trans-unit id="7d5f57928d3799da0098978c5897dc492d450538" resname="flash.user.updated">
         <source>flash.user.updated</source>
-        <target state="new">flash.user.updated</target>
+        <target>User updated</target>
       </trans-unit>
       <trans-unit id="184cb8eb86c4bbe8d2c692ff57b69d83e39adc3f" resname="message.servers.not_configured">
         <source>No Servers configured</source>
@@ -69,11 +69,22 @@
         <jms:reference-file line="2">/Resources/FOSUserBundle/views/Profile/edit.html.twig</jms:reference-file>
         <jms:reference-file line="4">/Resources/FOSUserBundle/views/Profile/show.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="31011b542c536ce89063f7988c2ff7fecd2c048a" resname="rcon.table.actions">
+        <source>Actions</source>
+        <target>Actions</target>
+        <jms:reference-file line="10">/../src/AppBundle/Resources/views/Rcon/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9f0152494f2c0c49681eb670ece83f167def1b5a" resname="rcon.table.servername">
+        <source>Servername</source>
+        <target>Servername</target>
+        <jms:reference-file line="9">/../src/AppBundle/Resources/views/Rcon/index.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="412a3b904524ea64d28d8cb3cad1ac630fe7b1f1" resname="server.status.current_users">
         <source>Online users</source>
         <target>Online</target>
         <jms:reference-file line="30">/../src/AppBundle/Resources/views/Default/index.html.twig</jms:reference-file>
         <jms:reference-file line="56">/../src/AppBundle/Resources/views/Default/index.html.twig</jms:reference-file>
+        <jms:reference-file line="21">/../src/AppBundle/Resources/views/Rcon/server.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="c8bd75f4353b52bcac5123f8156d9eba8a77d1d0" resname="table.servers.head.actions">
         <source>Actions</source>
@@ -93,12 +104,12 @@
       </trans-unit>
       <trans-unit id="230af24e2c3051ac2f484487cf7edd77316c44c0" resname="table.users.head.email">
         <source>E-Mail</source>
-        <target state="new">E-Mail</target>
+        <target>E-Mail</target>
         <jms:reference-file line="12">/../src/AppBundle/Resources/views/Admin/users.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="ad03d5dbed2e59f83fb5ec7de7d909107a78c872" resname="table.users.head.name">
         <source>Name</source>
-        <target state="new">Name</target>
+        <target>Name</target>
         <jms:reference-file line="11">/../src/AppBundle/Resources/views/Admin/users.html.twig</jms:reference-file>
       </trans-unit>
     </body>

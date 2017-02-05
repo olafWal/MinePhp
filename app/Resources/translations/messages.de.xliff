@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2017-02-04T16:37:58Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+  <file date="2017-02-05T02:06:15Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -69,11 +69,22 @@
         <jms:reference-file line="2">/Resources/FOSUserBundle/views/Profile/edit.html.twig</jms:reference-file>
         <jms:reference-file line="4">/Resources/FOSUserBundle/views/Profile/show.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="31011b542c536ce89063f7988c2ff7fecd2c048a" resname="rcon.table.actions">
+        <source>Actions</source>
+        <target>Aktionen</target>
+        <jms:reference-file line="10">/../src/AppBundle/Resources/views/Rcon/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9f0152494f2c0c49681eb670ece83f167def1b5a" resname="rcon.table.servername">
+        <source>Servername</source>
+        <target>Servername</target>
+        <jms:reference-file line="9">/../src/AppBundle/Resources/views/Rcon/index.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="412a3b904524ea64d28d8cb3cad1ac630fe7b1f1" resname="server.status.current_users">
         <source>Online users</source>
         <target>Online</target>
         <jms:reference-file line="30">/../src/AppBundle/Resources/views/Default/index.html.twig</jms:reference-file>
         <jms:reference-file line="56">/../src/AppBundle/Resources/views/Default/index.html.twig</jms:reference-file>
+        <jms:reference-file line="21">/../src/AppBundle/Resources/views/Rcon/server.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="c8bd75f4353b52bcac5123f8156d9eba8a77d1d0" resname="table.servers.head.actions">
         <source>Actions</source>
