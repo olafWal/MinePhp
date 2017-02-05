@@ -57,7 +57,9 @@
     "twig/extensions": "^1.4",
     "jms/i18n-routing-bundle": "dev-master",
     "willdurand/js-translation-bundle": "^2.6",
-    "jms/security-extra-bundle": "dev-master"
+    "jms/security-extra-bundle": "dev-master",
+    "gries/rcon": "^0.0.3",
+    "spirit55555/php-minecraft": "dev-master"
   },
   "require-dev": {
     "sensio/generator-bundle": "^3.0",

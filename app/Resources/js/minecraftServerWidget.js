@@ -5,7 +5,9 @@ $.widget("minephp.minecraftServerPanel", {
     serverId: null,
     options: {
         dataRoute: 'app_ajax_queryserver',
-        refreshInterval: 20000
+        refreshInterval: 20000,
+        userImageBaseUrl: "https://mc-heads.net/combo/",
+        userImagePostfix: "/64.png"
     },
     _create: function () {
         var self = this;
@@ -41,6 +43,18 @@ $.widget("minephp.minecraftServerPanel", {
 
             if (pingData.favicon) {
                 $(this.element).find('[data-property=img]').html('<img class="img-rounded" src="' + pingData.favicon + '"/>')
+            }
+
+            if (res.data.players) {
+                var allPlayersList = "";
+
+                for (var idx = 0; idx < res.data.players.length; idx++) {
+                    allPlayersList += '<li>' +
+                        '<img title="' + res.data.players[idx] + '" src="' + this.options.userImageBaseUrl + res.data.players[idx] + this.options.userImagePostfix + '"/>' +
+                        '</li>';
+                }
+                console.log($(this.element).find('[data-property=players]'));
+                $(this.element).find('[data-property=players]').html(allPlayersList);
             }
         }
         else {

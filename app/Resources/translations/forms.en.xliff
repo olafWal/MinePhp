@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2017-02-03T15:25:54Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+  <file date="2017-02-04T16:38:51Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -8,17 +8,17 @@
     <body>
       <trans-unit id="f04b4b0274c32cb1120f106b9cfae76ea8abaa71" resname="field.password">
         <source>field.password</source>
-        <target state="new">field.password</target>
+        <target>Password</target>
         <jms:reference-file line="52">/../src/AppBundle/Form/UserType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="1c43bfdd084243014f46a17fda3f60a5a56e829a" resname="field.password.repeat">
         <source>field.password.repeat</source>
-        <target state="new">field.password.repeat</target>
+        <target>repeat password</target>
         <jms:reference-file line="53">/../src/AppBundle/Form/UserType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="0c8309945c1e4704310c48ff730c80a9e466c740" resname="field.user.email">
         <source>field.user.email</source>
-        <target state="new">field.user.email</target>
+        <target>email</target>
         <jms:reference-file line="29">/../src/AppBundle/Form/UserType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="e2adc837fd72295798674eb6cf5cc23b56b587ef" resname="field.user.enabled">
@@ -28,12 +28,12 @@
       </trans-unit>
       <trans-unit id="c014122dd012a38860f7a0fc2c5db88069ad51ac" resname="field.user.name">
         <source>field.user.name</source>
-        <target state="new">field.user.name</target>
+        <target>usernam</target>
         <jms:reference-file line="28">/../src/AppBundle/Form/UserType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="a108a2ff815ed6dd11d7df99d302f9790b0c4d0f" resname="field.user.roles">
         <source>field.user.roles</source>
-        <target state="new">field.user.roles</target>
+        <target>Roles</target>
         <jms:reference-file line="34">/../src/AppBundle/Form/UserType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="d64945e45920bba0e82cfc5fac7eb45700df3b95" resname="form.field.server.address">
@@ -60,21 +60,31 @@
         <source>form.field.server.queryPort</source>
         <target>Query port</target>
         <jms:reference-file line="15">/../src/AppBundle/Form/BungeeServerType.php</jms:reference-file>
-        <jms:reference-file line="15">/../src/AppBundle/Form/MinecraftServerType.php</jms:reference-file>
+        <jms:reference-file line="16">/../src/AppBundle/Form/MinecraftServerType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8d388529ce9349e8db22c64d8c5044c4e7f26d8e" resname="form.field.server.rconPassword">
+        <source>form.field.server.rconPassword</source>
+        <target>Rcon password</target>
+        <jms:reference-file line="18">/../src/AppBundle/Form/MinecraftServerType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="68eed0ede232298435dad34594f3a3b2baffe5af" resname="form.field.server.rconPort">
+        <source>form.field.server.rconPort</source>
+        <target>Rcon port</target>
+        <jms:reference-file line="17">/../src/AppBundle/Form/MinecraftServerType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="71e3ecfd034ed76a8269910c16fe770d7ea631a7" resname="role.admin">
         <source>role.admin</source>
-        <target state="new">role.admin</target>
+        <target>Admin</target>
         <jms:reference-file line="37">/../src/AppBundle/Form/UserType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="616df07356f824af2437b26079681f91746af5dc" resname="role.superadmin">
         <source>role.superadmin</source>
-        <target state="new">role.superadmin</target>
+        <target>Superadmin</target>
         <jms:reference-file line="38">/../src/AppBundle/Form/UserType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="d890f4d971eac9c70e48e1f6487d89f78b5155d6" resname="role.user">
         <source>role.user</source>
-        <target state="new">role.user</target>
+        <target>User</target>
         <jms:reference-file line="36">/../src/AppBundle/Form/UserType.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="d5cf39dfc0b3818f4f9f5853d3756f1da8c8b405" resname="server.formtab.bungee">

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "343a4d86e91e767942aaedf267cb9906",
+    "content-hash": "6fe2545cf9a00835ec1da0b6c3ecfdc1",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -66,6 +66,58 @@
                 "bootstrap"
             ],
             "time": "2016-10-10 21:30:05"
+        },
+        {
+            "name": "clue/socket-raw",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clue/php-socket-raw.git",
+                "reference": "8a10282bcb1e45e076a8a8285237681380e55ea5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clue/php-socket-raw/zipball/8a10282bcb1e45e076a8a8285237681380e55ea5",
+                "reference": "8a10282bcb1e45e076a8a8285237681380e55ea5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-sockets": "*",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Socket\\Raw\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@lueck.tv"
+                }
+            ],
+            "description": "Simple and lightweight OOP wrapper for PHP's low level sockets extension (ext-sockets)",
+            "homepage": "https://github.com/clue/php-socket-raw",
+            "keywords": [
+                "Socket",
+                "client",
+                "datagram",
+                "dgram",
+                "icmp",
+                "ipv6",
+                "server",
+                "stream",
+                "tcp",
+                "udg",
+                "udp",
+                "unix"
+            ],
+            "time": "2015-03-18T23:48:01+00:00"
         },
         {
             "name": "components/jquery",
@@ -1143,6 +1195,48 @@
                 "User management"
             ],
             "time": "2017-02-01 19:45:47"
+        },
+        {
+            "name": "gries/rcon",
+            "version": "0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gries/rcon.git",
+                "reference": "e7f8d5f51b68ee848ca75627eb5284fc27df98b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gries/rcon/zipball/e7f8d5f51b68ee848ca75627eb5284fc27df98b0",
+                "reference": "e7f8d5f51b68ee848ca75627eb5284fc27df98b0",
+                "shasum": ""
+            },
+            "require": {
+                "clue/socket-raw": "~1.1"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "gries\\Rcon\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Rosse",
+                    "email": "christoph@rosse.at"
+                }
+            ],
+            "description": "PHP RCON Client",
+            "keywords": [
+                "rcon"
+            ],
+            "time": "2015-06-07T11:23:24+00:00"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -2397,6 +2491,42 @@
             "time": "2016-09-23T18:09:57+00:00"
         },
         {
+            "name": "spirit55555/php-minecraft",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Spirit55555/PHP-Minecraft.git",
+                "reference": "69ed91ebc47a1239479b3830419cca1a96208d0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Spirit55555/PHP-Minecraft/zipball/69ed91ebc47a1239479b3830419cca1a96208d0d",
+                "reference": "69ed91ebc47a1239479b3830419cca1a96208d0d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spirit55555\\Minecraft\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv3"
+            ],
+            "description": "Useful PHP classes for Minecraft",
+            "homepage": "https://github.com/Spirit55555/PHP-Minecraft/",
+            "keywords": [
+                "chat",
+                "minecraft",
+                "votifier"
+            ],
+            "time": "2016-11-19 20:56:14"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.5",
             "source": {
@@ -3601,7 +3731,8 @@
         "friendsofsymfony/user-bundle": 20,
         "jms/translation-bundle": 20,
         "jms/i18n-routing-bundle": 20,
-        "jms/security-extra-bundle": 20
+        "jms/security-extra-bundle": 20,
+        "spirit55555/php-minecraft": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

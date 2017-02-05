@@ -23,6 +23,52 @@ class MinecraftServer extends AbstractServer
     protected $queryPort;
 
     /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    protected $rconPort;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $rconPassword;
+
+    /**
+     * @return mixed
+     */
+    public function getRconPassword()
+    {
+        return $this->rconPassword;
+    }
+
+    /**
+     * @param mixed $rconPassword
+     * @return MinecraftServer
+     */
+    public function setRconPassword($rconPassword)
+    {
+        $this->rconPassword = $rconPassword;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRconPort()
+    {
+        return $this->rconPort;
+    }
+
+    /**
+     * @param mixed $rconPort
+     * @return MinecraftServer
+     */
+    public function setRconPort($rconPort)
+    {
+        $this->rconPort = $rconPort;
+        return $this;
+    }
+
+    /**
      * @return mixed
      */
     public function getQueryPort()

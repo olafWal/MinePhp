@@ -2,7 +2,10 @@ default:
     resource: "@AppBundle/Controller/DefaultController.php"
     type:     annotation
     prefix: /
-
+rcon:
+    resource: "@AppBundle/Controller/RconController.php"
+    type:     annotation
+    prefix: /rcon
 admin:
     resource: "@AppBundle/Controller/AdminController.php"
     type:     annotation

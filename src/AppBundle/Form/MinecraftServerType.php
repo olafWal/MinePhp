@@ -12,7 +12,10 @@ class MinecraftServerType extends AbstractServerType
      */
     public function addFields(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('queryPort', null, ['required' => false, 'label' => 'form.field.server.queryPort']);
+        $builder
+            ->add('queryPort', null, ['required' => false, 'label' => 'form.field.server.queryPort'])
+            ->add('rconPort', null, ['required' => false, 'label' => 'form.field.server.rconPort'])
+            ->add('rconPassword', null, ['required' => false, 'label' => 'form.field.server.rconPassword']);
     }
 
     /**

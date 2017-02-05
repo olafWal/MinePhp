@@ -1,0 +1,71 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-success minecraft-server-panel" data-serverid="{{ server.id }}">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-sm-12"><span class="h3">{{ server.name }}</span><span
+                                    data-property="img"
+                                    class="pull-right minecraft-server-icon-container"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">{{ server.description }}</div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="list-group">
+                                <li class="list-group-item">{{ 'server.status.current_users' | trans | desc('Online users') }}
+                                    <span
+                                            class="badge" data-property="players_online">0</span></li>
+                                <li class="list-group-item " data-property="sample">&nbsp;</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                            <div id="terminal"></div>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <ul class="list-inline" data-property="players">
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    Thanks to <a href="https://mc-heads.net">MCHeads</a> for providing Minecraft avatars.
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $('.minecraft-server-panel').minecraftServerPanel();
+        $(function () {
+            //$('#terminal').terminal(Routing.generate('app_rcon_service'));
+            $('#terminal').terminal(function (command, term) {
+                term.pause();
+                $.post(Routing.generate('app_rcon_service', {id: {{ server.id }} }), {command: command}).then(function (response) {
+                    if (response.success) {
+                        term.echo(response.result, {raw: true}).resume();
+                    }
+                });
+            }, {
+                greetings: '{{ server.name }} console',
+                onBlur: function () {
+                    return false;
+                }
+            });
+        })
+    </script>
+
+{% endblock javascripts %}
