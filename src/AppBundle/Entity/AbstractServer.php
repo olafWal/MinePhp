@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Model\RconCapable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -14,8 +15,20 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\DiscriminatorMap( {"minecraft" = "MinecraftServer", "bungee" = "BungeeServer"} )
  *
  */
-abstract class AbstractServer
+abstract class AbstractServer implements RconCapable
 {
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    protected $queryPort;
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $rconPassword;
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    protected $rconPort;
     /**
      * @var int
      *
@@ -174,9 +187,58 @@ abstract class AbstractServer
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getRconPassword()
+    {
+        return $this->rconPassword;
+    }
+
+    /**
+     * @param mixed $rconPassword
+     * @return AbstractServer
+     */
+    public function setRconPassword($rconPassword)
+    {
+        $this->rconPassword = $rconPassword;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRconPort()
+    {
+        return $this->rconPort;
+    }
+
+    /**
+     * @param mixed $rconPort
+     * @return AbstractServer
+     */
+    public function setRconPort($rconPort)
+    {
+        $this->rconPort = $rconPort;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getQueryPort()
     {
-        return null;
+        return $this->queryPort;
+    }
+
+    /**
+     * @param mixed $queryPort
+     * @return AbstractServer
+     */
+    public function setQueryPort($queryPort)
+    {
+        $this->queryPort = $queryPort;
+        return $this;
     }
 }
 

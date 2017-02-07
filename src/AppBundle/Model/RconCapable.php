@@ -18,7 +18,7 @@
 namespace AppBundle\Model;
 
 
-interface RconEnabledInterface
+interface RconCapable
 {
     public function getRconPort();
     public function getRconPassword();

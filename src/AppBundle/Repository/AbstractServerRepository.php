@@ -5,7 +5,7 @@ namespace AppBundle\Repository;
 use AppBundle\Entity\AbstractServer;
 use AppBundle\Entity\BungeeServer;
 use AppBundle\Entity\MinecraftServer;
-use AppBundle\Model\RconEnabledInterface;
+use AppBundle\Model\RconCapable;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -27,7 +27,7 @@ class AbstractServerRepository extends \Doctrine\ORM\EntityRepository
         $result = new ArrayCollection($queryBuilder->getQuery()->getResult());
 
         if ($onlyActive) {
-            $result = $result->filter(function(RconEnabledInterface $server) {
+            $result = $result->filter(function(RconCapable $server) {
                 return ($server->getRconPort() && $server->getRconPassword());
             });
         }
