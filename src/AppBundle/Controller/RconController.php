@@ -2,7 +2,9 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\AbstractServer;
 use AppBundle\Entity\MinecraftServer;
+use AppBundle\Repository\AbstractServerRepository;
 use gries\Rcon\MessengerFactory;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -21,15 +23,10 @@ class RconController extends Controller
      */
     public function indexAction()
     {
-        $servers = $this->getDoctrine()->getRepository(MinecraftServer::class)->findAll();
-        // TODO: Filter via Repository
-        $rconServers = [];
-        foreach ($servers as $server) {
-            if ($server->getRconPort() && $server->getRconPassword()) {
-                $rconServers[] = $server;
-            }
-        }
-        return ['servers' => $rconServers];
+        /** @var AbstractServerRepository $repository */
+        $repository = $this->getDoctrine()->getRepository(AbstractServer::class);
+        $servers = $repository->getRconServers(true);
+        return ['servers' => $servers];
     }
 
     /**

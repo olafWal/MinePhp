@@ -8,6 +8,7 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Model\RconEnabledInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -15,7 +16,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @package AppBundle\Entity
  * @ORM\Entity()
  */
-class MinecraftServer extends AbstractServer
+class MinecraftServer extends AbstractServer implements RconEnabledInterface
 {
     /**
      * @ORM\Column(type="integer", nullable=true)

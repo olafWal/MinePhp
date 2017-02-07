@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2017-02-05T02:04:10Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+  <file date="2017-02-07T13:45:01Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -43,7 +43,7 @@
       </trans-unit>
       <trans-unit id="fc63e6995ad0b986abfae0eac7df32698de3b9eb" resname="menu.rconServers.list">
         <source>menu.rconServers.list</source>
-        <target>.icon-list List</target>
+        <target>.icon-list Rcon Servers</target>
         <jms:reference-file line="54">/../src/AppBundle/Menu/Builder.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="38472978f3524caebd15bb9c7b909783a455c4d8" resname="menu.servers">
