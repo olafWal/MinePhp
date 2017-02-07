@@ -36,6 +36,4 @@ class MinecraftServerType extends AbstractServerType
     {
         return 'appbundle_minecraftserver';
     }
-
-
 }
