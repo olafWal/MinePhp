@@ -19,16 +19,15 @@
                         <td>{{ user.username }}</td>
                         <td>{{ user.email }}</td>
                         <td><a href="{{ path('app_admin_useredit', {'id': user.id}) }}"
-                               class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></a>
-                            <a class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a></td>
+                               class="btn btn-primary btn-sm">{{ icon('pencil') }}</a>
+                            <a class="btn btn-danger btn-sm">{{ icon('trash') }}</a></td>
                     </tr>
                 {% endfor %}
                 </tbody>
                 <tfoot>
                 <tr>
                     <td colspan="2"></td>
-                    <td><a href="{{ path('app_admin_useredit') }}" class="btn btn-primary btn-sm"><span
-                                    class="glyphicon glyphicon-plus"></span></a></td>
+                    <td><a href="{{ path('app_admin_useredit') }}" class="btn btn-primary btn-sm">{{ icon('plus') }}</a></td>
                 </tr>
                 </tfoot>
             </table>

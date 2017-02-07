@@ -37,6 +37,7 @@
 /web/fonts
 /web/js
 /web/config.php
+!/web/images
 # PHPUnit
 /app/phpunit.xml
 /phpunit.xml
