@@ -23,6 +23,7 @@
 /bin/*
 !bin/console
 !bin/symfony-perms.sh
+!bin/symfony_requirements
 /vendor/
 
 # Assets and user uploads
@@ -36,7 +37,6 @@
 /web/css/
 /web/fonts
 /web/js
-/web/config.php
 !/web/images
 # PHPUnit
 /app/phpunit.xml
